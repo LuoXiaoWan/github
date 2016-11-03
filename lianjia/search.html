@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>链家网-列表页</title>
+    <link  rel=stylesheet href="framworks/bootstrap-3.3.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="framworks/jquery-2.1.4/jquery.min.js"></script>
+    <script src="framworks/bootstrap-3.3.0-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<!--头部开始-->
+<div class="header1">
+    <!--第一行-->
+    <div class="row-one row">
+        <div class="col-xs-7">
+            <a href="#">
+                <img src="images/list_01.png">
+            </a>
+            <a href="#">
+                上海
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+        </div>
+        <div class="col-xs-5 position">
+            <ul class="list-unstyled pull-right">
+                <li>
+                    <span class="glyphicon glyphicon-download"></span>
+                </li>
+                <li><a href="#">APP</a></li>
+            </ul>
+            <ul class="list-unstyled pull-right">
+                <li>
+                    <span class="glyphicon glyphicon-user"></span>
+                </li>
+                <li><a href="#">我的</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--头部结束-->
+<!--搜索框开始-->
+<div class="search">
+    <!--第一行-->
+    <div class="row row-one">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <form action="" class=" has-feedback">
+                <input type="search" class="form-control" placeholder="请输入小区或板块名">
+                <i class="device"></i>
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </form>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+</div>
+<!--搜索框结束-->
+<!--筛选开始-->
+<div class="shaixuan1">
+    <div class="row-one row dropdown">
+        <ul class="col-xs-3 list-unstyled">
+            <li data-toggle="dropdown">
+                <a href="#">
+                    区域
+                    <span class="caret"></span>
+                </a>
+            </li>
+            <ul class="dropdown-menu">
+                <li><a href="#">不限</a></li>
+                <li><a href="#">浦东</a></li>
+                <li><a href="#">宝山</a></li>
+                <li><a href="#">徐汇</a></li>
+                <li><a href="#">青浦</a></li>
+            </ul>
+        </ul>
+        <ul class="col-xs-3 list-unstyled">
+            <li data-toggle="dropdown">
+                <a href="#">
+                    租金
+                    <span class="caret"></span>
+                </a>
+            </li>
+            <ul class="dropdown-menu">
+                <li><a href="#">不限</a></li>
+                <li><a href="#">1000-2000</a></li>
+                <li><a href="#">2000-3000</a></li>
+                <li><a href="#">3000-4000</a></li>
+                <li><a href="#">4000以上</a></li>
+            </ul>
+        </ul>
+        <ul class="col-xs-3 list-unstyled dropdown">
+            <li data-toggle="dropdown">
+                <a href="#">
+                    户型
+                    <span class="caret"></span>
+                </a>
+            </li>
+            <ul class="dropdown-menu">
+                <li><a href="#">不限</a></li>
+                <li><a href="#">一室<input type="checkbox"></a></li>
+                <li><a href="#">二室<input type="checkbox"></a></li>
+                <li><a href="#">三室<input type="checkbox"></a></li>
+                <li><a href="#">四室<input type="checkbox"></a></li>
+                <li><a href="#">五室<input type="checkbox"></a></li>
+                <li><a href="#">五室以上<input type="checkbox"></a></li>
+                <li><button class="btn btn-success form-control">确定</button></li>
+            </ul>
+        </ul>
+        <ul class="col-xs-3 list-unstyled dropdown">
+            <li data-toggle="dropdown">
+                <a href="#">
+                    更多
+                    <span class="caret"></span>
+                </a>
+            </li>
+            <ul class="dropdown-menu">
+                <ul class="ulLeft list-unstyled">
+                    <li><a href="#">排序</a></li>
+                    <li><a href="#">朝向</a></li>
+                    <li><a href="#">面积</a></li>
+                    <li><a href="#">标签</a></li>
+                    <li><a href="#">楼层</a></li>
+                </ul>
+                <ul class="ulRight list-unstyled">
+                    <li><a href="#">默认排序</a></li>
+                    <li><a href="#">最新上架时间</a></li>
+                    <li><a href="#">租金从低到高</a></li>
+                    <li><a href="#">租金从高到底</a></li>
+                    <li><a href="#">面积从大到小</a></li>
+                    <li><a href="#">面积从小到大</a></li>
+                </ul>
+                <ul class="ulBottom list-unstyled">
+                    <li><button class="btn btn-success form-control">确定</button></li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
+</div>
+<!--筛选结束-->
+<!--房源开始-->
+<div class="list">
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><img src="images/list_07.png"></a>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                成熟社区，诚意出售，闹钟取静..
+            </div>
+            <p>3室2厅　181m<sup>2</sup>　南北</p>
+            <p>路易凯旋宫</p>
+            <p>
+                <span>满五</span>
+                <span>地铁房</span>
+                <span>有钥匙</span>
+            </p>
+            <span>310万</span>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><img src="images/list_07.png"></a>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                成熟社区，诚意出售，闹钟取静..
+            </div>
+            <p>3室2厅　181m<sup>2</sup>　南北</p>
+            <p>路易凯旋宫</p>
+            <p>
+                <span>满五</span>
+                <span>地铁房</span>
+                <span>有钥匙</span>
+            </p>
+            <span>310万</span>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><img src="images/list_07.png"></a>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                成熟社区，诚意出售，闹钟取静..
+            </div>
+            <p>3室2厅　181m<sup>2</sup>　南北</p>
+            <p>路易凯旋宫</p>
+            <p>
+                <span>满五</span>
+                <span>地铁房</span>
+                <span>有钥匙</span>
+            </p>
+            <span>310万</span>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><img src="images/list_07.png"></a>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                成熟社区，诚意出售，闹钟取静..
+            </div>
+            <p>3室2厅　181m<sup>2</sup>　南北</p>
+            <p>路易凯旋宫</p>
+            <p>
+                <span>满五</span>
+                <span>地铁房</span>
+                <span>有钥匙</span>
+            </p>
+            <span>310万</span>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><img src="images/list_07.png"></a>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                成熟社区，诚意出售，闹钟取静..
+            </div>
+            <p>3室2厅　181m<sup>2</sup>　南北</p>
+            <p>路易凯旋宫</p>
+            <p>
+                <span>满五</span>
+                <span>地铁房</span>
+                <span>有钥匙</span>
+            </p>
+            <span>310万</span>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><img src="images/list_07.png"></a>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                成熟社区，诚意出售，闹钟取静..
+            </div>
+            <p>3室2厅　181m<sup>2</sup>　南北</p>
+            <p>路易凯旋宫</p>
+            <p>
+                <span>满五</span>
+                <span>地铁房</span>
+                <span>有钥匙</span>
+            </p>
+            <span>310万</span>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><img src="images/list_07.png"></a>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                成熟社区，诚意出售，闹钟取静..
+            </div>
+            <p>3室2厅　181m<sup>2</sup>　南北</p>
+            <p>路易凯旋宫</p>
+            <p>
+                <span>满五</span>
+                <span>地铁房</span>
+                <span>有钥匙</span>
+            </p>
+            <span>310万</span>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><img src="images/list_07.png"></a>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                成熟社区，诚意出售，闹钟取静..
+            </div>
+            <p>3室2厅　181m<sup>2</sup>　南北</p>
+            <p>路易凯旋宫</p>
+            <p>
+                <span>满五</span>
+                <span>地铁房</span>
+                <span>有钥匙</span>
+            </p>
+            <span>310万</span>
+        </div>
+    </div>
+</div>
+<!--房源结束-->
+</body>
+</html>

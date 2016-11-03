@@ -1,0 +1,31 @@
+/*注册头部*/
+.header2 ul>li{height: 41px;line-height: 41px;border-bottom: 1px solid #e9e9e9;margin-left:14px;padding-right: 14px;}
+.header2 ul>li:nth-child(3){margin: 0;border-bottom: 1px solid #d3d3d3;}
+.header2 ul>li:nth-child(3)>input{padding-left: 14px;}
+.header2 ul>li>input{border: none;display: inline-block;height:38px;width: 100%;cursor: pointer;}
+.header2 ul>li:nth-child(1)>input{width: 50%;}
+.header2 ul>li:nth-child(1){position: relative;}
+.header2 ul>li:nth-child(1)>span{display: inline-block;border: 1px solid #bababa;font-size: 12px;height: 30px;line-height: 30px;padding: 0 9px;position: absolute;right: 14px;top:5px;color: #000;}
+.header2 ul>li:nth-child(4){border-bottom: none;}
+.header2 ul>li:nth-child(4)>button{border-radius: 0;margin: 15px 0;}
+
+/*文字*/
+.text>.row-one{margin:0;padding-top: 10px;}
+.text>.row-one>div span{color: #39ac6a;}
+
+
+/*登录页面*/
+.login>.row{margin: 0;}
+.login>.row-one>div{text-align: center;padding: 10px 0;}
+.login>.row-two{height: 4px;width: 100%;background: #d1d1d1;}
+.login>.row-two>.back{background: #39ac6a;height: 4px;}
+
+/*第三行*/
+.login ul>li{height: 41px;line-height: 41px;border-bottom: 1px solid #e9e9e9;margin-left:14px;padding-right: 14px;}
+.login ul>li:nth-child(2){margin: 0;border-bottom: 1px solid #d3d3d3;}
+.login ul>li:nth-child(2)>input{padding-left: 14px;}
+.login ul>li>input{border: none;display: inline-block;height: 38px;width: 100%;cursor: pointer;}
+.login ul>li:nth-child(3){border-bottom: none;}
+.login ul>li:nth-child(3)>button{border-radius: 0;margin: 15px 0;}
+.login>.row-four{margin:0;padding-top: 10px;}
+.login>.row-four>div:nth-child(1) a{color: #39ac6a;}

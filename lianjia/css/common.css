@@ -1,0 +1,9 @@
+/*公共样式*/
+/*头部导航*/
+.header1>.row-one{background: #39ac6a;width: 100%;margin:0;}
+.header1>.row-one>div>a{display:inline-block;overflow: hidden;margin-top: 12px;}
+.header1>.row-one>div>a:nth-child(2){color: #fff;font-size: 12px;}
+.header1>.row-one>div>a>span{vertical-align: middle;}
+.header1>.row-one>.position{margin-top: 5px;}
+.header1>.row-one>.position>ul>li{height:15px;line-height:14px;color:#fff;text-align: center;margin-left: 15px;}
+.header1>.row-one>.position>ul>li>a{color: #fff;font-size: 12px;}

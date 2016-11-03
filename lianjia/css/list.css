@@ -1,0 +1,55 @@
+
+/*搜索框*/
+.search>.row-one{background: #f4f4f4;margin:0;}
+.search>.row-one>div:nth-child(2){padding: 9px 0;position: relative;}
+.search>.row-one i{display: inline-block;width: 1px;background:#d8d8d8;height:70%;position: absolute;right:32px;top:5px;}
+
+/*筛选*/
+.shaixuan>.row-one>ul{border:1px solid #c5c5c5;border-left: none;border-right: none;margin: 0;}
+.shaixuan>.row-one>ul>li{cursor:pointer;height: 38px;line-height: 38px;text-align: center;border-right: 1px solid #a3a3a3;padding: 0;}
+.shaixuan>.row-one>ul>li:nth-child(4){border-right: none;}
+.shaixuan>.row-one>ul>li span{color: #a3a3a3;}
+.shaixuan>.row-one>ul>ul{width: 100%;}
+.shaixuan>.row-one>ul>ul>li{padding:10px 13px 10px 19px;border-bottom: 1px solid #e5e5e5;position: relative;}
+
+
+
+
+
+/*房源*/
+.list .media{position: relative;margin:10px 10px 0;border-bottom: 1px solid #e9e9e9;padding-bottom: 10px;}
+.list .media-body>.media-heading{cursor:pointer;margin: 0;overflow: hidden;height: 20px;text-overflow: ellipsis;width: 100%;}
+.list .media-body>p{font-size: 12px;color:#6b6b75;margin: 0;}
+.list .media-body>p>sup{font-size: 8px;}
+.list .media-body>p>span{border: 1px solid #58a4d4;color:#0f73b1;padding: 1px;}
+.list .media-body>p>span:nth-child(2){border: 1px solid #f5cc3f;color:#f3c060;}
+.list .media-body>span{position: absolute;right:10px;top:30px;color: #e96b44;}
+
+
+
+
+/*筛选*/
+.shaixuan1>.row-one{border:1px solid #c5c5c5;border-left: none;border-right: none;margin: 0;}
+.shaixuan1>.row-one>ul{margin: 0;padding: 0;border-right: 1px solid #e5e5e5;cursor: pointer;}
+.shaixuan1>.row-one>ul:last-child{border-right: none;}
+.shaixuan1>.row-one>ul>li{text-align: center;padding: 10px 0;}
+.shaixuan1>.row-one>ul>ul.dropdown-menu{margin-top: 1px;}
+.shaixuan1>.row-one>ul:nth-child(1)>ul.dropdown-menu{width: 400%;}
+.shaixuan1>.row-one>ul:nth-child(2)>ul.dropdown-menu{width: 400%;position: absolute;left:-100%;}
+.shaixuan1>.row-one>ul:nth-child(3)>ul.dropdown-menu{width: 400%;position: absolute;left:-200%;}
+.shaixuan1>.row-one>ul:nth-child(4)>ul.dropdown-menu{width: 400%;position: absolute;left:-300%;}
+
+.shaixuan1>.row-one>ul>ul{border-radius: 0;margin: 0;border: none;padding: 0;box-shadow: none;}
+.shaixuan1>.row-one>ul>ul>li{padding:10px 13px 10px 19px;border-bottom: 1px solid #e5e5e5;position: relative;}
+.shaixuan1>.row-one>ul>ul>li button{border-radius: 0;}
+.shaixuan1>.row-one>ul>ul>li input{position: absolute;right:13px;}
+
+.shaixuan1>.row-one .ulLeft{float: left;width: 25%;}
+.shaixuan1>.row-one .ulLeft>li:first-child{background: #f1f1f1;}
+.shaixuan1>.row-one .ulLeft>li:first-child>a{color:#00ae66;}
+.shaixuan1>.row-one .ulLeft>li{border-bottom: 1px solid #dcdcdc;padding: 10px 0 9px 19px;}
+.shaixuan1>.row-one .ulRight{float: left;width: 75%;height:300px;background: #f1f1f1;border-left: 1px solid #dcdcdc;}
+.shaixuan1>.row-one .ulRight>li{border-bottom: 1px solid #dcdcdc;padding: 10px 0 9px 0;margin-left: 19px;}
+.shaixuan1>.row-one .ulBottom{clear: both;border:1px solid #ededed;border-right: none;border-left: none;}
+.shaixuan1>.row-one .ulBottom>li{padding:8px 20px;}
+.shaixuan1>.row-one .ulBottom>li>button{border-radius: 0;}

@@ -1,0 +1,12 @@
+.pics{background: #f29a5c;height: 130px;width: 100%;}
+.pics>.row-one{margin: 0 auto;width: 50px;padding: 15px 0;}
+.pics>.row-one img{border-radius: 25px;height: 50px;width: 100%;}
+.pics>.row-two{text-align: center;}
+.pics>.row-two>button{display: inline-block;padding: 8px 23px;background: #39ac6a;border: 1px solid #fff;color: #fff;margin-right: 8px;}
+
+
+/*文本*/
+.text>ul>li{padding: 18px 0;border-bottom: 1px solid #e2e2e2;margin-left:10px;position: relative;cursor: pointer;}
+.text>ul>li span{position: absolute;right:28px;top:20px;color:#9f9f9f;}
+.text>ul>li:nth-child(4){margin: 0;border-bottom: 1px solid #c5c5c5;}
+.text>ul>li:nth-child(4)>a{padding-left:10px;}

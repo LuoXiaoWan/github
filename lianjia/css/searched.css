@@ -1,0 +1,16 @@
+/**搜索**/
+/*头部第一部分*/
+.searched .row-one{ height:42px;background: #39ac6a;}
+.searched .row-one .text{ line-height:42px;color:#fff;}
+.searched .row-one .icon{ height:42px;margin-top:2px;text-align:center;color:#fff;}
+.searched .row-one .icon > ul{ margin-left:8px;}
+
+/*第二部分*/
+.searched .row-two{ background: #f4f4f4;padding:20px 10px;margin-top: 0;}
+.searched .row-two span{ color:#39ac6a;}
+
+/*第三部分*/
+.searched .row-three{ height:38px;border-top:1px solid #c5c5c5;border-bottom:1px solid #c5c5c5;}
+.searched .row-three .area{ height:38px;border-right:1px solid #c5c5c5;border-radius: 0;}
+.searched .row-three .total{ height:38px;border-right:1px solid #c5c5c5;border-radius: 0;color:#39ac6a;}
+.searched .row-three .model{ height:38px;border-right:1px solid #c5c5c5;border-radius: 0;color:#39ac6a;}

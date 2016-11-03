@@ -1,0 +1,17 @@
+/**搜索页面**/
+/*第一行*/
+.search .row-one{ height:38px;line-height:38px;border-top:1px solid #c5c5c5;border-bottom:1px solid #c5c5c5;}
+.search .row-one .area{ height:38px;text-align:center;border-right:1px solid #c5c5c5;border-radius:0;}
+.search .row-one .rent{ height:38px;text-align:center;border-right:1px solid #c5c5c5;border-radius:0;}
+.search .row-one .room{ height:38px;text-align:center;border-right:1px solid #c5c5c5;border-radius:0;}
+.search .row-one .four-room a{ color:#39ac6a;}
+.search #one-menu{ width:100%;border-top:none;border-radius:0;text-align: center;}
+.search #one-menu .sure{ width:334px;height:32px;background:#00ae66;color:#fff;border-radius:0;}
+
+
+/*第二部分*/
+.row-two > .list-home .media{ padding:14px 11px;border-bottom:1px solid #c5c5c5;}
+.row-two > .list-home .media-heading{ font-weight:bolder;margin-bottom:0;text-overflow: ellipsis;}
+.row-two > .list-home .media-body > p{ margin:0;font-size:12px;}
+.row-two > .list-home .media-body .money{ color:#e96b55;float:right;}
+.row-two > .list-home .media-body .label{ display:inline-block;margin-top:4px;}
