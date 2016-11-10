@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	table{ width:400px;border-collapse:collapse;text-align:center;}
+	th,td{ border:1px solid #ccc;}
+</style>
+
+<script type="text/javascript" src="ajax_1.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		
+		var btn = document.getElementsByTagName("button");
+		var content = document.getElementById("content");
+		btn[0].onclick = function(){
+				getText("../data/students.json",function(data){
+					//将字符串转换为对象
+					var stus = JSON.parse(data);
+					clearData(content);
+					//遍历
+					stus.forEach(function(item,index){
+						//创建tr
+						var newTr = document.createElement("tr");
+						//遍历item元素
+						for(var key in item){
+							//创建td
+							var newTd = document.createElement("td");
+							//将遍历的元素放入新建的td中
+							newTd.innerText = item[key];
+							//将td追加到tr中
+							newTr.appendChild(newTd);
+							}
+							//将td追加到tbody中
+							content.appendChild(newTr);
+						})					
+				});
+			};
+			
+			
+			
+			btn[1].onclick = function(){
+				getXML("../data/students.xml",function(data){
+					clearData(content);
+					Array.prototype.slice.call(data.children[0].children,0).forEach(function(stus,index){
+						var newTr = document.createElement("tr");
+						var idTd = document.createElement("td");
+						idTd.textContent = stus.id;
+						newTr.appendChild(idTd);
+						Array.prototype.slice.call(stus.children,0).forEach(function(item,index){
+							var newTd = document.createElement("td");
+							newTd.textContent = item.textContent;
+							newTr.appendChild(newTd);
+							});
+							content.appendChild(newTr);
+						})
+					})
+				};
+
+				btn[2].onclick = function(){
+                    clearData(content);
+                };
+			
+		
+		};
+    	
+    </script>
+</head>
+	
+<body>
+	<button>getText</button>
+    <button>getXML</button>
+    <button>clearData</button>
+    <table>
+    	<thead>
+        	<tr>
+            	<th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody id="content">
+        	
+        </tbody>
+    </table>
+</body>
+</html>

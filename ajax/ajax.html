@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	table{ width:400px;border-collapse:collapse;text-align:center;}
+	th,td{ border:1px solid #ccc;}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	
+	var btn = document.getElementsByTagName("button");
+	var tbody = document.getElementById("getStus");
+	//实例化
+	var request = new XMLHttpRequest();
+	//指定请求
+	request.open("GET","data/students.json");
+	//设置请求头
+	request.setRequestHeader("Content-type","text/plain;charset=UTF-8");
+	//发送请求
+	request.send();
+	
+	//接收响应数据
+
+	request.onreadystatechange = function(){
+		if(request.status==200 && request.readyState==4){
+			btn[0].onclick = function(){
+				var text = request.responseText;
+				clearData(getStus);
+				getData(text);
+				};
+			btn[1].onclick = function(){
+				clearData(getStus);
+				};
+			}
+		};
+	
+		
+		//获取数据
+		function getData(text){
+			var stus = JSON.parse(text);
+			stus.forEach(function(item,index){
+				var newTr = document.createElement("tr");
+				for(var key in item){
+					var newTd = document.createElement("td");
+					newTd.innerHTML = item[key];
+					newTr.appendChild(newTd);					
+					}
+					getStus.appendChild(newTr);
+				})
+			}
+			
+			//清除数据
+			function clearData(parentNode){
+				Array.prototype.slice.call(parentNode.children,0).forEach(function(item,index){
+						parentNode.removeChild(item);
+					});
+				}
+	
+	};
+	
+
+		
+		
+</script>
+</head>
+
+<body>
+	<button>获取数据</button>
+    <button>清除数据</button>
+	<table>
+    	<thead>
+        	<tr>
+            	<th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody id="getStus">
+        	
+        </tbody>
+    </table>
+</body>
+</html>
