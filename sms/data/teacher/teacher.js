@@ -1,0 +1,32 @@
+// JavaScript Document
+teacher([{
+	"id":"1001",
+	"name":"terry",
+	"w_age":"10",
+	"salary":"12000",
+	"grade":"1"
+	},{
+	"id":1002,
+	"name":"tom",
+	"w_age":8,
+	"salary":1000,
+	"grade":1	
+		},{
+	"id":1003,
+	"name":"Vivian",
+	"w_age":6,
+	"salary":8000,
+	"grade":2		
+		},{
+	"id":1004,
+	"name":"vicky",
+	"w_age":5,
+	"salary":7500,
+	"grade":2	
+		},{				
+	"id":1005,	
+	"name":"larry",
+	"w_age":1,
+	"salary":5000,
+	"grade":3
+	}]);

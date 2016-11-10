@@ -1,0 +1,95 @@
+<!--添加教师-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+	.return{
+		position:absolute;
+		right:20px;
+		top:10px;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		init();
+		
+		
+		//为form表单绑定事件
+			$("form[name='addTeaForm']").off("submit");
+			$("form[name='addTeaForm']").on("submit",function(event){
+				//数据提交
+					var name = $(":text[name='name']").val();
+					var w_age = $(":text[name='w_age']").val();
+					var salary = $("text[name='salary']").val();
+					var grade = $(":text[name='grade']").val();
+					var obj = {name:name,w_age:w_age,salary:salary,grade:grade};
+					//console.log(obj);
+					
+					var url = $("form[name='addTeaForm']").attr("action");
+					$.ajax(url,obj,{
+						method:"POST",
+						dataType:"jsonp",
+						jsonp:"jsonp",
+						jsonpCallback:"foo",
+						data:obj
+						});
+					
+					
+				//event.preventDefault();
+				return false;
+				alert("准备提交");
+				});
+		});
+		
+		//给返回按钮绑定事件
+		function init(){
+			$(".return").click(function(event){
+				$(".tab_content").load("data/teacher/teacher.html");
+				event.preventDefault();
+				});
+			}
+			
+			function foo(data){
+				$("form[name='addTeaForm']")[0].reset();
+				console.log(data);
+				}
+			
+</script>
+<div class="inner">
+	<h3>添加教师</h3>
+    <a class="return" href="javascript:void(0);">返回</a>
+    <form action="http://172.16.8.185:8080/sms/addTeadents" name="addTeaForm">
+	<table>
+    	<tbody>
+        	<tr>
+            	<td>姓名</td>
+                <td>
+                	<input type="text" name="name"/>
+                </td>
+            </tr>
+            <tr>
+            	<td>工龄</td>
+                <td>
+                	<input type="text" name="w_age">
+                </td>
+            </tr>
+            <tr>
+            	<td>薪资</td>
+                <td>
+                	<input type="text" name="salary">
+                </td>
+            </tr>
+            <tr>
+            	<td>等级</td>
+                <td>
+                	<input type="text" name="grade"/>
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="2">
+                <input type="submit" value="保存"/>
+                <input type="reset" value="重置"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+</div>

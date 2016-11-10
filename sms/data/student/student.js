@@ -1,0 +1,33 @@
+// JavaScript Document
+student([{
+	"id":1001,
+	"name":"terry",
+	"grade":"三年一班",
+	"gender":"男",
+	"score":100
+	},{
+	"id":1002,
+	"name":"tom",
+	"grade":"三年二班",
+	"gender":"男",
+	"score":60	
+		},{
+	"id":1003,
+	"name":"Vivian",
+	"grade":"三年二班",
+	"gender":"女",
+	"score":76		
+		},{
+	"id":1004,
+	"name":"vicky",
+	"grade":"二年二班",
+	"w_age":5,
+	"gender":"女",
+	"score":76	
+		},{				
+	"id":1005,	
+	"name":"larry",
+	"grade":"一年二班",
+	"gender":"男",
+	"score":86
+	}]);

@@ -1,0 +1,86 @@
+<!--添加学生-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+	.return{
+		position:absolute;
+		right:20px;
+		top:10px;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		init();
+		
+		//给form表单绑定事件
+			$("form[name='addClsForm']").off();
+			$("form[name='addClsForm']").on("submit",function(event){
+				//数据提交
+					var className = $(":text[name='className']").val();
+					var num = $(":text[name='num']").val();
+					var name = $(":text[name='name']").val();
+					var BzName = $(":text[name='BzName']").val();
+					
+					var obj = {className:className,num:num,name:name,BzName:BzName};
+					
+					var url = $("form[name='addClsForm']").attr("action");
+					$.ajax(url,obj,{
+						method:"POST",
+						dataType:"jsonp",
+						jsonp:"jsonp",
+						jsonpCallback:"foo",
+						data:obj
+						});
+						return false;
+						alert("准备提交");
+				});	
+		});
+	//给返回按钮绑定事件
+	function init(){
+		$(".return").click(function(event){
+			$(".tab_content").load("data/clazz/clazz.html");
+			event.preventDefault();
+			});
+		}
+		
+		
+</script>
+<div class="inner">
+	<h3>添加班级</h3>
+    <a class="return" href="javascript:void(0);">返回</a>
+    <form action="http://172.16.8.185:8080/sms/addClazzes" name="addClsForm">
+	<table>
+    	<tbody>
+        	<tr>
+            	<td>班级</td>
+                <td>
+                	<input type="text" name="className"/>
+                </td>
+            </tr>
+            <tr>
+            	<td>人数</td>
+                <td>
+                	<input type="text" name="num"/>
+                </td>
+            </tr>
+            <tr>
+            	<td>班主任</td>
+                <td>
+                	<input type="text" name="name"/>
+                </td>
+            </tr>
+            <tr>
+            	<td>班长</td>
+                <td>
+                	<input type="text" name="BzName"/>
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="2">
+                <input type="submit" value="保存"/>
+                <input type="reset" value="重置"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+</div>

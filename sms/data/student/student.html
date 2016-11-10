@@ -1,0 +1,174 @@
+<!--学生管理-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+	table th{ background-color:#ddd;}
+</style>
+<script type="text/javascript">
+	$(function(){
+		//加载数据
+		loadStuData();	
+		
+		//为复选框绑定事件
+			$(".opt_btns>:checkbox").off();
+			$(".opt_btns>:checkbox").change(function(){
+				//console.log(this);
+				if($(this).prop("checked")){
+					$("#stuTbl :checkbox:visible").prop("checked","checked");
+					}else{
+						$("#stuTbl :checkbox:visible").removeAttr("checked");
+						}
+							
+				});
+				
+				//为查询按钮绑定事件
+							$(".search :submit").off();
+							$(".search :submit").on("click",function(){
+								var key = $("select[name='search_key']").val();
+								//console.log(key);
+								var val = $(":text[name='search_val']").val();
+								//console.log(val);
+								console.log(key+"----"+val);
+								});
+				
+				//为添加，修改，删除，刷新按钮绑定事件
+					$(".opt_btns :button").off();
+					$(".opt_btns :button").click(function(){
+						//console.log(this);
+						var opt = $(this).text();
+						//console.log(opt);
+						switch(opt){
+							case "添加":
+								$(".tab_content").load("data/student/addStudent.html?time="+new Date().getTime())
+							break;
+							case "删除":
+								var delInp = $(":checkbox:checked");
+								var ids = delInp.map(function(index,item){
+									//return item.value;
+									return $(this).val();
+									}).get().join();
+									console.log(ids);
+									//delInp.closest("tr").remove();
+					var url = "http://172.16.5.159:8080/sms/delStudents?time="+new Date().getTime();
+									$.ajax(url,{
+										dataType:"jsonp",
+										jsonp:"jsonp",
+										jsonpCallback:"delHandler",
+										data:{ids:ids}
+										});
+							break;
+							case "修改":
+								var id = $("#stuTbl :checkbox:checked").map(function(index,item){
+									//return item.value;
+									return $(this).val();
+									}).get(0);
+									//console.log(id);
+									if(id){
+										//查询学生信息
+										var stu;
+										$.ajax("data/student/student.json",{
+											dataType:"json",
+											async:"false",
+											success:function(data){
+												stu = data;
+												}
+											});
+											
+											//加载修改学生的信息
+												$(".tab_content").load("data/student/updStudent.html?time="+new Date().getTime(),function(){
+													//初始化要修改的学生的信息
+													console.log("准备初始化");
+													console.log(stu);
+													$(":text[name='name']").val(stu.name);
+													$(":text[name='classId']").val(stu.classId);
+													$(":text[name='gender']").val(stu.gender);
+													$(":text[name='score']").val(stu.score);
+													});
+										}else{
+											alert("请选择要修改的学生信息");
+											}
+									
+							break;
+							case "刷新":
+								loadStuData();
+							break;
+							default:
+							}
+						});
+						
+						
+				
+		});
+		
+		function loadStuData(data){
+			data = data || {};
+			//在Apache服务器上请求本地数据
+			//var url = "http://192.168.0.107:80/jQ_test/sms/data/student/student.js?time="+new Date().getTime();
+			var url = "data/student/student.js";
+		$.ajax(url,{
+			dataType:"jsonp",
+			jsonp:"jsonp",
+			jsonpCallback:"student"
+			});
+			$(".opt_btns>:checkbox").prop("checked",false);
+			}
+		
+		function student(data){
+			//console.log(data);
+			var hTr = $(".hiddenTr");
+			$("tbody").children(":gt(0)").remove();
+			data.forEach(function(item){
+				var newTr = hTr.clone().removeClass("hiddenTr");
+				newTr.find(":checkbox").val(item.id);
+				newTr.children().eq(1).text(item.name);
+				newTr.children().eq(2).text(item.grade);
+				newTr.children().eq(3).text(item.gender);
+				newTr.children().eq(4).text(item.score);
+				$("tbody").append(newTr);
+				});
+			
+			};
+			
+			function delHandler(data){
+							console.log(data);
+							}
+</script>
+<div class="inner">
+				<div class="search">
+					<select name="search_key" id="">
+						<option value="name">姓名</option>
+						<option value="clazz">班级</option>
+						<option value="score">成绩</option>
+					</select>
+					<input name="search_val" type="text">
+					<input type="submit" value="search">
+				</div>
+				<table id="stuTbl">
+					<thead>
+						<tr>
+							<th>选择</th>
+							<th>姓名</th>
+							<th>班级</th>
+							<th>性别</th>
+							<th>分数</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="hiddenTr">
+							<td>
+				<input type="checkbox">
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="opt_btns">
+					<input type="checkbox">
+					<button>添加</button>
+					<button>修改</button>
+					<button>删除</button>
+                    <button>刷新</button>
+				</div>
+			</div>

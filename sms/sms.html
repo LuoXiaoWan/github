@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>学生信息管理系统</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+    	$(function(){
+			//选项卡
+			$(".tab_header ul").on("click","li",function(){
+				if(!$(this).hasClass("current")){
+					$(this).addClass("current").siblings().removeClass("current");
+					
+					var url = $(this).attr("val");
+					$(".tab_content").load(url);
+					}
+				});
+				/*
+				$("div").on({
+					mousedown:function(){
+						$(this).css("url","data/student/student.html");	
+						},
+					mouseup:function(){
+						$(this).css("url","");
+						}	
+					},"li");
+					
+					$("li:first").trigger("mousedown");
+					setTimeout(function(){
+						$("li:first").trigger("mouseup");
+						},1000);
+			*/
+			});
+    </script>
+</head>
+
+<body>
+	<div class="content">
+		<h1>学生信息管理系统</h1>
+		<div class="tab_header">
+			<ul>
+				<li val="data/student/student.html?time="+new Date().getTime() class="current">
+					<a href="javascript:void(0);">学生信息</a>
+				</li>
+				<li val="data/teacher/teacher.html?time="+new Date().getTime()>
+					<a href="javascript:void(0);">教师信息</a>
+				</li>
+				<li val="data/clazz/clazz.html?time="+new Date().getTime()>
+					<a href="javascript:void(0);">班级信息</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab_content">
+			
+			
+			
+			
+			
+			
+
+		</div>
+
+	</div>
+</body>
+</html>

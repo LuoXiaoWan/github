@@ -1,0 +1,48 @@
+<!--学生管理-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+	table th{ background-color:#ddd;}
+	table{ width:300px;border:1px solid #ccc;border-collapse:collapse;text-align:center;}
+	table th,table td{ border:1px solid #ccc;}
+</style>
+<script type="text/javascript" src="../../../js/jquery-2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+			//加载数据
+			var url = "http://169.254.46.91:80/jQ_test/sms/data/student/student.js";
+			$.ajax(url,{
+				dataType:"jsonp",
+				jsonp:"jsonp",
+				jsonpCallback:"student"
+				});	
+		});
+		//加载学生数据 刷新
+			function student(data){
+				console.log(data);
+				}
+</script>
+
+				<table id="stuTbl">
+					<thead>
+						<tr>
+							<th>选择</th>
+							<th>姓名</th>
+							<th>班级</th>
+							<th>性别</th>
+							<th>分数</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="hiddenTr">
+							<td>
+				<input type="checkbox">
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
